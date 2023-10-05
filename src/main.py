@@ -2,6 +2,7 @@ from typing import Union
 import pandas as pd
 import numpy as np
 from fastapi import FastAPI
+import uvicorn
 
 app = FastAPI()
 
@@ -75,5 +76,4 @@ def predict(age, gender, height, ):
     return output
 
 if __name__ == "__main__":
-    pass
-    # uvicorn.
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
